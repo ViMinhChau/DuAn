@@ -13,11 +13,11 @@ body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
 }
-/* ------------------chung-------------------- */
+/* ============================================== Chung ================================================= */
 a {
   text-decoration: none;
 }
-.main-container {
+.main-content {
   width: 1170px;
   max-width: calc(100% - 48px);
   margin-left: auto;
@@ -36,6 +36,8 @@ a {
   background: #171100;
 }
 .btn:hover {
+  cursor: pointer;
+
   opacity: 0.9;
 }
 .heading-lv2 {
@@ -46,7 +48,20 @@ a {
   line-height: 1.26; /* 126.316% */
   letter-spacing: -0.76px;
 }
-/* ..................header................ */
+/* ===================================== Khắc phục vấn đề tràn dữ liệu và chữ không có khoảng trắng ========================================== */
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+.break-all {
+  word-break: break-all;
+}
+/* ============================================== header ================================================= */
 .header {
   background: #f7e8c1;
 }
@@ -58,7 +73,7 @@ a {
 .header .body {
   display: flex;
   align-items: center;
-  padding: 30px 0 8px;
+  padding: 36px 0 8px;
 }
 .nav {
   margin-left: auto;
@@ -98,13 +113,13 @@ a {
 }
 /* ..................hero................ */
 .hero {
-  padding: 56px 56px 65px;
+  padding: 56px 0 65px;
   background-color: #f7e8c1;
 }
 .hero .body {
   display: flex;
 }
-/* ..................hero left................ */
+/* ============================================== hero left ================================================= */
 .hero .media-block {
   position: relative;
   width: 48%;
@@ -161,7 +176,7 @@ a {
   font-weight: 600;
   line-height: 1.67; /* 166.667% */
 }
-/* ..................hero right................ */
+/* ============================================== hero right ================================================= */
 .hero .content-block {
   width: 52%;
   padding-left: 130px;
@@ -219,10 +234,10 @@ a {
 .hero .re {
   margin-top: 48px;
 }
-.hero .stro {
+.hero .matzo {
   margin-top: 8px;
 }
-.hero .stro strong {
+.hero .matzo strong {
   margin-right: 15px;
   color: #171100;
   font-family: var(--font-heading);
@@ -230,12 +245,12 @@ a {
   font-weight: 700;
   line-height: 1.23; /* 122.727% */
 }
-.hero .stro strong:nth-child(2) {
+.hero .matzo strong:nth-child(2) {
   margin-left: 28px;
 }
-/* .................. popular ................ */
+/* ============================================== popular ================================================= */
 .popular {
-  padding: 65px;
+  padding: 65px 0;
   margin-top: 135px;
 }
 .popular-top {
@@ -243,7 +258,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.popular .desc {
+.popular-top .desc {
   margin-top: 16px;
   width: 458px;
   color: #5f5b53;
@@ -269,4 +284,131 @@ a {
   background-color: var(--color-yellow);
   color: #fff;
   cursor: pointer;
+}
+/* ============================================== popular-next ================================================= */
+.popular .course-list {
+  flex: 1;
+  display: flex;
+  margin-top: 55px;
+  gap: 30px;
+}
+.popular .course-item {
+  border-radius: 12px;
+  border: 1px solid #e2dfda;
+  background: #fff;
+}
+.popular .course-item:hover {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+}
+.popular .course-item .thump {
+  width: 100%;
+  height: 278px;
+  object-fit: cover;
+  border-radius: 12px 12px 0px 0px;
+}
+.popular .course-item .info {
+  padding: 16px 22px 22px;
+}
+.popular .course-item .foot,
+.popular .course-item .rating,
+.popular .course-item .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popular .course-item .title a {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67; /* 166.667% */
+}
+.popular .rating .value {
+  margin-left: 6px;
+  color: #fea31b;
+  font-size: 16px;
+  line-height: 1.75; /* 175% */
+}
+.popular .course-item .desc {
+  margin-top: 6px;
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
+}
+.popular .course-item .foot {
+  margin-top: 12px;
+}
+.popular .course-item .price {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67; /* 166.667% */
+}
+.popular .course-item .btn-book {
+  border: none;
+}
+.popular .course-item .btn-book:hover {
+  background: var(--color-yellow);
+}
+/* ============================================== feedback ================================================= */
+.feedback {
+  margin-top: 135px;
+  background: #2e2100;
+  padding: 96px 0;
+}
+.feedback-list {
+  display: flex;
+  overflow: hidden;
+}
+.feedback-item {
+  width: 100%;
+  display: flex;
+  /* flex-shrink: 0; */
+}
+.feedback-item .avt {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.feedback-item .info .member {
+  margin-top: 18px;
+  color: #f7f7f7;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.42; /* 141.667% */
+}
+.feedback-item .info .desc {
+  color: #bfbcb2;
+  font-size: 1.4rem;
+
+  line-height: 1.86; /* 185.714% */
+}
+.feedback-item .dots {
+  gap: 6px;
+  margin-top: 28px;
+  display: flex;
+}
+.feedback-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #634700;
+  cursor: pointer;
+}
+.feedback-item .dot.active {
+  background: var(--color-yellow);
+  cursor: default;
+}
+.feedback-item .content {
+  width: 66%;
+  margin-left: auto;
+}
+.feedback-item blockquote {
+  color: #fff;
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1.54; /* 153.846% */
 }
